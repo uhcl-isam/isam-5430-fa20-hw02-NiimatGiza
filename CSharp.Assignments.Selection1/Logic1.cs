@@ -7,25 +7,56 @@ namespace CSharp.Assignments.Loop1
     public class Logic1
     {
         /// <summary>
-        /// When squirrels get together for a party, they like to have cigars. A squirrel party is successful when the number of cigars is between 40 and 60, inclusive. Unless it is the weekend, in which case there is no upper bound on the number of cigars. Return true if the party with the given values is successful, or false otherwise.
+        /// When squirrels get together for a party, they like to have cigars. 
+        /// A squirrel party is successful when the number of cigars is between 
+        /// 40 and 60, inclusive. Unless it is the weekend, in which case there is no 
+        /// upper bound on the number of cigars. Return true if the party with the given values 
+        /// is successful, or false otherwise.
         /// </summary>
         /// <param name="cigars"></param>
         /// <param name="isWeekend"></param>
         /// <returns></returns>
         public static bool CigarParty(int cigars, bool isWeekend)
         {
-            throw new NotImplementedException();
+            if (isWeekend && (cigars >= 40))
+            {
+                return true;
+            }
+           else if (cigars >= 40 && cigars <= 60)
+            {
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
-        /// You are driving a little too fast, and a police officer stops you.Write code to compute the result, encoded as an int value: 0=no ticket, 1=small ticket, 2=big ticket. If speed is 60 or less, the result is 0. If speed is between 61 and 80 inclusive, the result is 1. If speed is 81 or more, the result is 2. Unless it is your birthday -- on that day, your speed can be 5 higher in all cases.
+        /// You are driving a little too fast, and a police officer stops you.Write code to compute 
+        /// the result, encoded as an int value: 0=no ticket, 1=small ticket, 2=big ticket. 
+        /// If speed is 60 or less, the result is 0. If speed is between 61 and 80 inclusive, 
+        /// the result is 1. If speed is 81 or more, the result is 2. Unless it is your birthday -- 
+        /// on that day, your speed can be 5 higher in all cases.
         /// </summary>
         /// <param name="speed"></param>
         /// <param name="birthday"></param>
         /// <returns></returns>
         public static int CaughtSpeeding(int speed, bool birthday)
         {
-            throw new NotImplementedException();
+            if(birthday)
+            {
+                if (speed <= 65)
+                    return 0;
+                else if (speed >= 66 && speed <= 85)
+                    return 1;
+                else
+                    return 2;
+
+            }
+            if (speed <= 60)
+                return 0;
+            else if (speed >= 61 && speed <= 80)
+                return 1;
+            else
+                return 2;
         }
 
         /// <summary>
@@ -36,7 +67,10 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static bool Love6(int a, int b)
         {
-            throw new NotImplementedException();
+            if (a == 6 || b == 6 || a + b == 6 || a - Math.Abs(b) == 6 || Math.Abs(b) - Math.Abs(a) == 6)
+                return true;
+            else
+                return false;
         }
 
         /// <summary>
@@ -46,7 +80,10 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static bool More20(int num)
         {
-            throw new NotImplementedException();
+            if (num % 20 == 1 || num % 20 == 2)
+                return true;
+            else
+                return false;
         }
 
         /// <summary>
@@ -56,29 +93,61 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static bool NearTen(int num)
         {
-            throw new NotImplementedException();
+            if (num % 10 == 2 || num % 10 == 9 || num % 10 == 8 || num % 10 == 1 || num % 10 == 0)
+                return true;
+            else
+                return false;
         }
 
         /// <summary>
-        /// We are having a party with amounts of tea and candy. Return the int outcome of the party encoded as 0=bad, 1=good, or 2=great. A party is good (1) if both tea and candy are at least 5. However, if either tea or candy is at least double the amount of the other one, the party is great (2). However, in all cases, if either tea or candy is less than 5, the party is always bad (0).
+        /// We are having a party with amounts of tea and candy. Return the int outcome of 
+        /// the party encoded as 0=bad, 1=good, or 2=great. A party is good (1) if both tea 
+        /// and candy are at least 5. However, if either tea or candy is at least double the amount 
+        /// of the other one, the party is great (2). However, in all cases, if either tea or candy 
+        /// is less than 5, the party is always bad (0).
         /// </summary>
         /// <param name="tea"></param>
         /// <param name="candy"></param>
         /// <returns></returns>
         public static int TeaParty(int tea, int candy)
         {
-            throw new NotImplementedException();
+            if ((tea >= (candy * 2)) || (candy >= (tea * 2)))
+            {
+                return 2;
+
+            }
+            else if (tea < 5 || candy < 5)
+            {
+                return 0;
+            }
+            else if (tea >= 5 && candy >= 5)
+            {
+                return -1;
+
+            }
+
+          
+            else
+                return 0;
         }
 
         /// <summary>
-        /// The squirrels in Palo Alto spend most of the day playing.In particular, they play if the temperature is between 60 and 90 (inclusive). Unless it is summer, then the upper limit is 100 instead of 90. Given an int temperature and a boolean isSummer, return true if the squirrels play and false otherwise.
+        /// The squirrels in Palo Alto spend most of the day playing.In particular, they play if the 
+        /// temperature is between 60 and 90 (inclusive). Unless it is summer, then the upper limit 
+        /// is 100 instead of 90. Given an int temperature and a boolean isSummer, return true if the
+        /// squirrels play and false otherwise.
         /// </summary>
         /// <param name="temperature"></param>
         /// <param name="isSummer"></param>
         /// <returns></returns>
         public static bool SquirrelPlay(int temperature, bool isSummer)
         {
-            throw new NotImplementedException();
+            if (isSummer == true && temperature >= 60 && temperature <= 100)
+                return true;
+            else if (temperature >= 60 && temperature <= 90)
+                return true;
+            else
+                return false;
         }
 
         /// <summary>
@@ -95,7 +164,17 @@ namespace CSharp.Assignments.Loop1
         /// <returns>either: "7:00" or "10:00" or "off"</returns>
         public static string AlarmClock(DayOfWeek dayOfWeek, bool vacation)
         {
-            throw new NotImplementedException();
+            if (vacation)
+            {
+                if (dayOfWeek >= 1 && dayOfWeek <= 5)
+                    return "10:00";
+                else
+                    return "off";
+            }
+            if (dayOfWeek >= 1 && dayOfWeek <= 5)
+                return "7:00";
+            else
+                return "10:00";
         }
 
 
@@ -108,7 +187,12 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
         {
-            throw new NotImplementedException();
+            if (isMorning && isMom && !isAsleep)
+                return true;
+            else if (!isAsleep && !isMorning)
+                return true;
+            else
+                return false;
         }
 
 
@@ -126,7 +210,9 @@ namespace CSharp.Assignments.Loop1
         }
 
         /// <summary>
-        /// Given three ints, a b c, return true if one of b or c is "close" (differing from a by at most 1), while the other is "far", differing from both other values by 2 or more. Note: Math.abs(num) computes the absolute value of a number.
+        /// Given three ints, a b c, return true if one of b or c is "close" (differing from a by 
+        /// at most 1), while the other is "far", differing from both other values by 2 or more. 
+        /// Note: Math.abs(num) computes the absolute value of a number.
         /// </summary>
         /// <param name="a"></param>
         /// <param name="b"></param>
@@ -134,7 +220,17 @@ namespace CSharp.Assignments.Loop1
         /// <returns></returns>
         public static bool CloseFar(int a, int b, int c)
         {
-            throw new NotImplementedException();
+            if (a-b <= Math.Abs(1) && (a - c >= Math.Abs(2) && b - c  >= Math.Abs(2)))
+            {
+                return true;
+            }
+
+            else if (a - c <= Math.Abs(1) && (a - b >= Math.Abs(2) && c - b >= Math.Abs(2)))
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

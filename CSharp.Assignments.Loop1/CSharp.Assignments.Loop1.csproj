@@ -6,4 +6,8 @@
     <StartupObject>CSharp.Assignments.Loop1.AscendingFillers</StartupObject>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CSharp.Assignments.Selection1\CSharp.Assignments.Selection1.csproj" />
+  </ItemGroup>
+
 </Project>

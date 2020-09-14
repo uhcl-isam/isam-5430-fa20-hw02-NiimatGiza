@@ -24,6 +24,52 @@ namespace CSharp.Assignments.Loop1
         {
             // get first number and assign it to variable largest
             // write your codes here
+            int count = 0;
+
+            int largest = 0;
+            int largest2 = 0;
+            int num = 0;
+            
+            for(count=0; count < 10; count++)
+            {
+                Console.WriteLine("Please enter the number");
+                num = Convert.ToInt32(Console.ReadLine());
+
+                if(count ==0)
+                {
+                    largest = num;
+                }
+
+                else if (count == 1)
+                {
+                    if(num > largest)
+                    {
+                        largest2 = num;
+                    }
+                    else
+                    {
+                        largest2 = largest;
+                        largest = num;
+                    }
+                }
+
+                else
+                {
+                    if(num >= largest && num >= largest2)
+                    {
+                        largest = largest2;
+                        largest2 = num;
+                    }
+
+                    else if(num >= largest && num <= largest2)
+                    {
+                        largest = num;
+                    }
+                }
+
+                
+
+            }
         }
     }
 }

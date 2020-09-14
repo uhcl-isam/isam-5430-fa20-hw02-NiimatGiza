@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics.Tracing;
+
 namespace CSharp.Assignments.Loop1
 {
     /// <summary>
@@ -18,7 +20,45 @@ namespace CSharp.Assignments.Loop1
         public static void Main()
         {
             // enter sentinel inputs
+
+            int counter, num, k, rev = 0;
+            bool ic = true;
+            do
+            {
+                counter = 0;
+                Console.Error.WriteLine("Please enter 9 digits");
+                num = int.Parse(Console.ReadLine());
+                int j = num;
+
+                for (; j >= 1 || counter < j; j /= 10)
+                    counter = counter + 1;
+
+                if (counter != 9)
+                {
+                    Console.Error.WriteLine("Enter 9 digits");
+                    ic = true;
+                }
+                else 
+                {
+                    ic = false;
+                    k = num;
+
+                    for (; num >= 1; num /= 10)
+                        rev = rev * 10 + (num % 10);
+
+                    if (rev == k)
+                        Console.WriteLine("a palindrome");
+                    else
+                    
+                        Console.WriteLine("not a palindrome");
+                    
+                }
+                
+            }
+            while (ic);
             // then check the palindrome only once.
+            // loop for entering
+            //second loop for calculation
         }
     }
 }

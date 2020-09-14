@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,6 +18,29 @@ namespace CSharp.Assignments.Loop1
         public static void Main()
         {
             // Write your codes here
+            bool match = false;
+            int count = 0;
+            int num;
+            Console.Error.WriteLine("Please enter any set of numbers");
+            num = int.Parse(Console.ReadLine());
+           
+            int j = num;
+
+            for (int i =0; i < num.length-1; i++)
+            {
+                if (num[i] == num[i + 1] && !match)
+                {
+                    match = true;
+                    count++;
+                }
+                else if (num[i] != num[i + 1])
+                {
+                    match = false;
+                }
+            }
+            return count;
         }
+       
+       
     }
 }
